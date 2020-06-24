@@ -15,31 +15,47 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Cadastrando produtos'),
         ),
-        body: Column(
-          children: <Widget>[
-            TextField(
-              controller: _nomeController,
-            ),
-            TextField(
-              controller: _quantidadeController,
-            ),
-            TextField(
-              controller: _valorController,
-            ),
-            RaisedButton(
-              child: Text(
-                'Cadastrar',
+        body: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  controller: _nomeController,
+                ),
               ),
-              onPressed: () {
-                final String nome = _nomeController.text;
-                final int quantidade = int.tryParse(_quantidadeController.text);
-                final double valor = double.tryParse(_valorController.text);
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  controller: _quantidadeController,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  controller: _valorController,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: RaisedButton(
+                  child: Text(
+                    'Cadastrar',
+                  ),
+                  onPressed: () {
+                    final String nome = _nomeController.text;
+                    final int quantidade =
+                        int.tryParse(_quantidadeController.text);
+                    final double valor = double.tryParse(_valorController.text);
 
-                final Produto produtoNovo = Produto(nome, quantidade, valor);
-                print(produtoNovo);
-              },
-            )
-          ],
+                    final Produto produtoNovo = Produto(nome, quantidade, valor);
+                    print(produtoNovo);
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
