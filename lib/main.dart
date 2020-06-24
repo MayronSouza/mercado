@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mercado/models/produto.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
               onPressed: () {
                 final String nome = _nomeController.text;
                 final int quantidade = int.tryParse(_quantidadeController.text);
-                final double valor = double.tryParse(_nomeController.text);
+                final double valor = double.tryParse(_valorController.text);
+
+                final Produto produtoNovo = Produto(nome, quantidade, valor);
+                print(produtoNovo);
               },
             )
           ],

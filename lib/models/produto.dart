@@ -8,4 +8,7 @@ class Produto {
     this.quantidade,
     this.valor,
   );
+
+  @override
+  String toString() => 'Produto(nome: $nome, quantidade: $quantidade, valor: $valor)';
 }
