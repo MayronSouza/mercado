@@ -22,18 +22,27 @@ class MyApp extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Nome',
+                  ),
                   controller: _nomeController,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Quantidade',
+                  ),
                   controller: _quantidadeController,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Valor',
+                  ),
                   controller: _valorController,
                 ),
               ),
@@ -49,7 +58,8 @@ class MyApp extends StatelessWidget {
                         int.tryParse(_quantidadeController.text);
                     final double valor = double.tryParse(_valorController.text);
 
-                    final Produto produtoNovo = Produto(nome, quantidade, valor);
+                    final Produto produtoNovo =
+                        Produto(nome, quantidade, valor);
                     print(produtoNovo);
                   },
                 ),
