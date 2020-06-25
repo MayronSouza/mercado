@@ -17,54 +17,60 @@ class MyApp extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Nome',
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Nome',
+                    ),
+                    controller: _nomeController,
+                    keyboardType: TextInputType.text,
                   ),
-                  controller: _nomeController,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Quantidade',
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Quantidade',
+                    ),
+                    controller: _quantidadeController,
+                    keyboardType: TextInputType.number,
                   ),
-                  controller: _quantidadeController,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Valor',
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Valor',
+                    ),
+                    controller: _valorController,
+                    keyboardType: TextInputType.number,
                   ),
-                  controller: _valorController,
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: RaisedButton(
-                  child: Text(
-                    'Cadastrar',
-                  ),
-                  onPressed: () {
-                    final String nome = _nomeController.text;
-                    final int quantidade =
-                        int.tryParse(_quantidadeController.text);
-                    final double valor = double.tryParse(_valorController.text);
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: RaisedButton(
+                    child: Text(
+                      'Cadastrar',
+                    ),
+                    onPressed: () {
+                      final String nome = _nomeController.text;
+                      final int quantidade =
+                          int.tryParse(_quantidadeController.text);
+                      final double valor =
+                          double.tryParse(_valorController.text);
 
-                    final Produto produtoNovo =
-                        Produto(nome, quantidade, valor);
-                    print(produtoNovo);
-                  },
-                ),
-              )
-            ],
+                      final Produto produtoNovo =
+                          Produto(nome, quantidade, valor);
+                      print(produtoNovo);
+                    },
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
